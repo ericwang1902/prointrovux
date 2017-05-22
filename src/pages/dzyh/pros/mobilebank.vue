@@ -1,0 +1,69 @@
+<template>
+ <div> 
+<p>
+    <br/>
+</p>
+<section class="_135editor" data-tools="135编辑器" data-id="88404" style="border: 0px none; padding: 0px;">
+    <section style="margin-top: 15px; margin-right: 0%; margin-left: 0%; position: static;">
+        <section class="135brush" style="text-align: justify; color: rgb(120, 114, 114); font-size: 15px; line-height: 1.8;white-space: normal;">
+            <p>
+                产品简介：我行通过手机客户端为个人客户提供查询、转帐、预约取款、理财、便民服务等高效快捷的服务。
+            </p>
+            <p>
+                产品特色：
+            </p>
+            <p>
+                1.随身使用：为您提供7X24小时全天候的服务；
+            </p>
+            <p>
+                2.安全可靠：采用一机一密钥，对关键信息进行加密传输，确保交易过程的安全；
+            </p>
+            <p>
+                3.高效快捷：转帐额度高、操作方便、资金到帐快；
+            </p>
+            <p>
+                4.功能丰富：除具有结算功能外，还提供“优惠快讯”、“商户查询”、“银行网点”、“金融信息”、“金融助手”等特色服务；
+            </p>
+            <p>
+                5.服务免费：凡是在我行办理手机银行客户，均可享受开户免费、结算免费等优惠。
+            </p>
+            <p>
+                申请条件：
+            </p>
+            <p>
+                拥有我行圆鼎借记卡、活期存折、一证通等结算账户的个人客户
+            </p>
+            <p>
+                业务流程：
+            </p>
+            <p>
+                1. 自助注册开通
+            </p>
+            <p>
+                （1）通过网站、扫描二维码等方式下载手机银行客户端；
+            </p>
+            <p>
+                （2）根据提示注册客户基本信息、结算账户信息、选择转账验证方式等完成自助注册。
+            </p>
+            <p>
+                2．柜面申请注册开通
+            </p>
+            <p>
+                持有效身份证件及结算账户至我行网点办理注册开通。
+            </p>
+            <p>
+                <br/>
+            </p>
+        </section>
+    </section>
+</section>
+<p>
+    <br/>
+</p>
+
+ </div>
+</template>
+<script>
+</script>
+<style>
+</style>

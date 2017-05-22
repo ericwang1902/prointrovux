@@ -1,0 +1,9 @@
+<template>
+ <div> 
+    代缴类
+ </div>
+</template>
+<script>
+</script>
+<style>
+</style>
