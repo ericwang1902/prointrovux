@@ -14,10 +14,10 @@
     </grid>
     <group-title>电子银行/个人/贷记卡</group-title>
     <grid :rows="2">
-      <grid-item link="/component/cell" label="车分期">
+      <grid-item link="/chefenqi" label="车分期">
         <img slot="icon" src="../../assets/car.png">
       </grid-item>
-      <grid-item :link="{ path: '/component/cell'}" label="现金随心分">
+      <grid-item :link="{ path: '/suixinfen'}" label="现金随心分">
         <img slot="icon" src="../../assets/fenqi.png">
       </grid-item>
     </grid>

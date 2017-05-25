@@ -1,81 +1,120 @@
 <template>
     <div>
-        <group title="产品目录">
-            <cell title="存款" is-link :border-intent="false" :arrow-direction="showContent001 ? 'up' : 'down'" @click.native="showContent001 = !showContent001"></cell>
-            <template class="slide" :class="showContent001?'animate':''"  v-if="showContent001" >
-                <cell-box :border-intent="false"  style="color:#888" is-link link="/ck_gr_catalog">个人</cell-box>
-                <cell-box  style="color:#888"is-link link="/ck_qy_catalog">企业</cell-box>
-            </template>
-
-            <cell title="理财" is-link :border-intent="false" :arrow-direction="showContent002 ? 'up' : 'down'" @click.native="showContent002 = !showContent002"></cell>
-            <template class="slide" :class="showContent002?'animate':''" v-if="showContent002">
-                <cell-box :border-intent="false"  style="color:#888"is-link link="/lc_gr_catalog">个人</cell-box>
-                <cell-box  style="color:#888"is-link link="/lc_qy_catalog">企业</cell-box>
-            </template>
-
-
-
-            <cell title="中间业务" is-link :border-intent="false" :arrow-direction="showContent003 ? 'up' : 'down'" @click.native="showContent003 = !showContent003"></cell>
-            <template class="slide" :class="showContent003?'animate':''" v-if="showContent003">
-                <cell-box :border-intent="false"  style="color:#888"is-link link="/zj_dj_catalog">代缴类</cell-box>
-                <cell-box  style="color:#888"is-link link="/zj_gjs_catalog">贵金属</cell-box>
-            </template>
-
-            <cell title="电子银行" is-link :border-intent="false" :arrow-direction="showContent004 ? 'up' : 'down'" @click.native="showContent004 = !showContent004"></cell>
-            <template class="slide" :class="showContent004?'animate':''" v-if="showContent004">
-                <cell-box :border-intent="false"  style="color:#888"is-link link="/dzyh_gr_catalog">个人</cell-box>
-                <cell-box  style="color:#888"is-link link="/dzyh_qy_catalog">企业</cell-box>
-            </template>
-
-            <cell title="贷款" is-link :border-intent="false" :arrow-direction="showContent005 ? 'up' : 'down'" @click.native="showContent005 = !showContent005"></cell>
-            <template class="slide" :class="showContent005?'animate':''" v-if="showContent005">
-                <cell-box :border-intent="false"  style="color:#888"is-link link="/dk_gr_catalog">个人</cell-box>
-                <cell-box  style="color:#888"is-link link="/dk_qy_catalog">企业</cell-box>
-            </template>
-
-        </group>
+        <group-title>个人存款</group-title>
+        <grid style="background-color:#fff">
+            <grid-item link="/grhq" label="个人活期储蓄">
+                <img slot="icon" src="../assets/grhq.png">
+            </grid-item>
+            <grid-item :link="{ path: '/grdq'}" label="个人定期储蓄">
+                <img slot="icon" src="../assets/grdq.png">
+            </grid-item>
+            <grid-item  link="/grtz" label="个人通知存款" @on-item-click="onItemClick">
+                <img slot="icon" src="../assets/grtz.png">
+            </grid-item>
+            <grid-item link="/decd" label="大额存单" @on-item-click="onItemClick">
+                <img slot="icon" src="../assets/decd.png">
+            </grid-item>
+            <grid-item link="/ync" label="益农存" @on-item-click="onItemClick">
+                <img slot="icon" src="../assets/ync.png">
+            </grid-item>
+            <grid-item link="/dht" label="定活通" @on-item-click="onItemClick">
+                <img slot="icon" src="../assets/dht.png">
+            </grid-item>
+        </grid>
+        <group-title>单位存款</group-title>
+        <grid :rows="2" style="background-color:#fff">
+            <grid-item link="/dwhq" label="单位活期存款">
+                <img slot="icon" src="../assets/dwhq.png">
+            </grid-item>
+            <grid-item :link="{ path: '/dwdq'}" label="单位定期存款">
+                <img slot="icon" src="../assets/dwdq.png">
+            </grid-item>
+            <grid-item link="/dwtz" label="单位通知存款" @on-item-click="onItemClick">
+                <img slot="icon" src="../assets/dwtz.png">
+            </grid-item>
+            <grid-item link="/dwxd" label="单位协定存款" @on-item-click="onItemClick">
+                <img slot="icon" src="../assets/xdck.png">
+            </grid-item>
+            
+        </grid>
+        <group-title>理财</group-title>
+        <grid :rows="2" style="background-color:#fff">
+            <grid-item link="/grlc" label="个人“汇富”理财">
+                <img slot="icon" src="../assets/grlc.png">
+            </grid-item>
+            <grid-item :link="{ path: '/qylc'}" label="企业“汇富”理财">
+                <img slot="icon" src="../assets/qylc.png">
+            </grid-item>
+        </grid>
+        <group-title>中间业务</group-title>
+        <grid :rows="2" style="background-color:#fff">
+            <grid-item link="/dsf" label="代收付业务">
+                <img slot="icon" src="../assets/dsdf.png">
+            </grid-item>
+            <grid-item :link="{ path: '/gjs'}" label="代理贵金属">
+                <img slot="icon" src="../assets/gjs.png">
+            </grid-item>
+        </grid>
+        <group-title>电子银行</group-title>
+        <grid style="background-color:#fff">
+            <grid-item link="/mobilebank" label="手机银行">
+                <img slot="icon" src="../assets/mobilebank.png">
+            </grid-item>
+            <grid-item :link="{ path: '/wechat'}" label="微信绑定">
+                <img slot="icon" src="../assets/wechat.png">
+            </grid-item>
+            <grid-item link="/disanfang" label="第三方支付" @on-item-click="onItemClick">
+                <img slot="icon" src="../assets/alipay.jpg">
+            </grid-item>
+            <grid-item link="/chefenqi" label="车分期">
+                <img slot="icon" src="../assets/car.png">
+            </grid-item>
+            <grid-item :link="{ path: '/suixinfen'}" label="现金随心分">
+                <img slot="icon" src="../assets/fenqi.png">
+            </grid-item>
+        </grid>
+        <group-title>贷款</group-title>
+        <grid style="background-color:#fff">
+            <grid-item link="/zfaj" label="住房按揭贷款">
+                <img slot="icon" src="../assets/fd.jpg">
+            </grid-item>
+            <grid-item :link="{ path: '/syaj'}" label="商用房按揭贷款">
+                <img slot="icon" src="../assets/syfd.png">
+            </grid-item>
+            <grid-item link="/jzd" label="家装贷" @on-item-click="onItemClick">
+                <img slot="icon" src="../assets/jzd.png">
+            </grid-item>
+            <grid-item link="/cyd" label="车易贷" @on-item-click="onItemClick">
+                <img slot="icon" src="../assets/cheyidai.png">
+            </grid-item>
+            <grid-item link="/jyd" label="精英贷" @on-item-click="onItemClick">
+                <img slot="icon" src="../assets/jingyingdai.png">
+            </grid-item>
+            <grid-item link="/gjjd" label="公积金信用贷" @on-item-click="onItemClick">
+                <img slot="icon" src="../assets/gjjdk.png">
+            </grid-item>
+        </grid>
+        <br>
     </div>
 </template>
 <script>
-    import { Cell, CellBox, CellFormPreview, Group } from 'vux'
+    import { Grid, GridItem, GroupTitle } from 'vux'
+
+
     export default {
         components: {
-            Group,
-            Cell,
-            CellFormPreview,
-            CellBox
+            Grid,
+            GridItem,
+            GroupTitle
         },
-        data() {
-            return {
-                showContent001: false,
-                showContent002: false,
-                showContent003: false,
-                showContent004: false,
-                showContent005: false
+        methods: {
+            onItemClick() {
 
             }
-        },
-        created () {
-            console.log(this.showContent001)
         }
     }
 
 </script>
 <style>
-    .sub-item {
-        color: #888;
-    }
 
-    .slide {
-        padding: 0 20px;
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height .5s cubic-bezier(0, 1, 0, 1) -.1s;
-    }
-
-    .animate {
-        max-height: 9999px;
-        transition-timing-function: cubic-bezier(0.5, 0, 1, 0);
-        transition-delay: 0s;
-    }
 </style>
